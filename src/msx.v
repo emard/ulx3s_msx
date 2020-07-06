@@ -174,6 +174,7 @@ module msx
   wire cpuClock  = clocks[1];
   wire clk_sdram = clocks[2];
   wire sdram_clk = clocks[3]; // phase shifted for chip
+  assign sdram_cke = 1;
 
   // ===============================================================
   // Joystick for OSD control and games
