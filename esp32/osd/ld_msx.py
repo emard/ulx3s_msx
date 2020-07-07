@@ -32,6 +32,7 @@ class ld_msx:
 
   # read from file -> write to SPI RAM
   def load_msx_rom(self, filedata, addr=0, maxlen=0x10000, blocksize=1024):
+    self.ctrl(2)
     # Request load
     self.cs.on()
     self.spi.write(bytearray([0,(addr >> 24) & 0xFF, (addr >> 16) & 0xFF, (addr >> 8) & 0xFF, addr & 0xFF]))
